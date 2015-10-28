@@ -4,7 +4,11 @@ window.Taglee = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    new Taglee.Routers.Router({
+      $rootEl: $("#content"),
+      albums: Taglee.Collections.albums
+    });
+    Backbone.history.start();
   }
 };
 
