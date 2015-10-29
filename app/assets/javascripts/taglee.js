@@ -5,8 +5,7 @@ window.Taglee = {
   Routers: {},
   initialize: function() {
     new Taglee.Routers.Router({
-      $rootEl: $("#content"),
-      albums: Taglee.Collections.albums
+      $rootEl: $("#content")
     });
     Backbone.history.start();
   }

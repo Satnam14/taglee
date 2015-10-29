@@ -6,6 +6,7 @@ class CreateMedia < ActiveRecord::Migration
       t.string :created_time
       t.string :poster
       t.string :poster_profile
+      t.integer :album_id, null: false
 
       t.timestamps null: false
     end

@@ -1,26 +1,28 @@
 Taglee.Routers.Router = Backbone.Router.extend({
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
-    this.collection = options.posts;
+    // this.model = new Taglee.Models.User({id: Backbone.currentUserID});
+    this.collection = new Taglee.Collections.Albums();
   },
 
   routes: {
-    "": "index",
-    "albums/new": "new",
-    "albums/:id": "show"
+    "": "profile",
+    "album/new": "newAlbum",
+    "album/:id": "showAlbum"
   },
 
-  index: function () {
+  profile: function () {
+    // this.model.fetch();
     this.collection.fetch();
 
-    var indexView = new Taglee.Views.AlbumsIndex({
+    var indexView = new Taglee.Views.Profile({
       collection: this.collection
     });
 
     this._swapView(indexView);
   },
 
-  new: function () {
+  newAlbum: function () {
     var newAlbum = new Taglee.Models.Album();
 
     var formView = new Taglee.Views.AlbumForm({
@@ -31,7 +33,7 @@ Taglee.Routers.Router = Backbone.Router.extend({
     this._swapView(formView);
   },
 
-  show: function (id) {
+  showAlbum: function (id) {
     var album = this.collection.getOrFetch(id);
     var formView = new Taglee.Views.AlbumShow({ model: album });
     this._swapView(formView);

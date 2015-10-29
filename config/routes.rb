@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'users/auth/instagram/callback', to: 'sessions#create'
   resource :session, only: [:destroy]
 
-  resources :users, only: [:show]
+  resources :users, only: [:show, :index]
 
   namespace :api, defaults: { format: :json } do
     resources :media, except: [:new, :edit]

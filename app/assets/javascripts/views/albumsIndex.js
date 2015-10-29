@@ -1,5 +1,5 @@
-  Taglee.Views.AlbumsIndex = Backbone.Views.extend({
-    template: JST['albums/index'],
+  Taglee.Views.AlbumsIndex = Backbone.View.extend({
+    template: JST['album/index'],
 
     initialize: function () {
       this.listenTo(this.collection, 'sync', this.render);

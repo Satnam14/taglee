@@ -14,6 +14,11 @@
 ActiveRecord::Schema.define(version: 20151028172754) do
 
   create_table "albums", force: :cascade do |t|
+    t.string   "tag",        null: false
+    t.string   "name",       null: false
+    t.string   "start",      null: false
+    t.string   "finish",     null: false
+    t.integer  "user_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -24,6 +29,7 @@ ActiveRecord::Schema.define(version: 20151028172754) do
     t.string   "created_time"
     t.string   "poster"
     t.string   "poster_profile"
+    t.integer  "album_id",       null: false
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
