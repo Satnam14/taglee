@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20151028172754) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "albums", force: :cascade do |t|
     t.string   "tag",        null: false
     t.string   "name",       null: false
@@ -26,8 +29,9 @@ ActiveRecord::Schema.define(version: 20151028172754) do
   create_table "media", force: :cascade do |t|
     t.string   "url",            null: false
     t.string   "caption"
-    t.string   "created_time"
+    t.string   "tag_time"
     t.string   "poster"
+    t.string   "link"
     t.string   "poster_profile"
     t.integer  "album_id",       null: false
     t.datetime "created_at",     null: false

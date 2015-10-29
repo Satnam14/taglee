@@ -10,7 +10,9 @@
       <div class="medium">
         <img class="profile-pic" src="<%= medium.escape('poster_profile')%>" alt="" />
         <h4> <%=medium.escape('poster')%> </h4>
-        <img class="medium-frame" src="<%= medium.escape('url')%>" alt="" />
+        <a href="<%= medium.escape('link') %>">
+          <img class="medium-frame" src="<%= medium.escape('url')%>" alt="" />
+        </a>
         <p>
           <%= medium.escape('caption') %>
         </p>

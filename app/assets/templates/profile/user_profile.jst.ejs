@@ -3,7 +3,7 @@
   <% albums.each(function (album) { %>
     <li>
       <a class="album-name" href="#/album/<%= album.id %>"><%= album.escape("name") %> (<%= album.escape('tag') %>) </a>
-      <button class="btn btn-default delete" data-id="<%= album.id %>">Delete!</button>
+      <button class="btn btn-default delete" data-id="<%=album.id%>">Delete!</button>
     </li>
   <% }); %>
 </ul>

@@ -3,8 +3,9 @@ class CreateMedia < ActiveRecord::Migration
     create_table :media do |t|
       t.string :url, null: false
       t.string :caption
-      t.string :created_time
+      t.string :tag_time
       t.string :poster
+      t.string :link
       t.string :poster_profile
       t.integer :album_id, null: false
 

@@ -12,9 +12,9 @@ Taglee.Views.AlbumForm = Backbone.View.extend({
     var attrs = this.$el.serializeJSON();
     var that = this;
     this.model.save(attrs, {
-      success: function () {
-        // that.collection.add(that.model, { merge: true });
-        // Backbone.history.navigate("", { trigger: true });
+      success: function (model, response, options) {
+        that.collection.add(that.model, { merge: true });
+        Backbone.history.navigate("#album/" + model.id, { trigger: true });
       }
     });
   },
