@@ -1,20 +1,36 @@
 <h1>Create a new Album</h1>
 
+<label for="name">Name: </label>
 <input type="text"
        name="name"
-       value="Name">
+       id="input-name"
+       placeholder="Name">
 
+<label for="tag">Tag: </label>
 <input type="text"
        name="tag"
-       id="tag-input"
-       value="Tag">
+       id="input-tag"
+       placeholder="Tag">
 
-<input type="date"
-       name="start"
-       id="start-date">
+<table>
+  <tr>
+    <td>
+      <label for="start">From: </label>
+      <input type="date"
+             name="start"
+             id="input-start-date">
+    </td>
 
-<input type="date"
-       name="finish"
-       id="end-date">
+    <td>
+      <label for="finish">To: </label>
+      <input type="date"
+             name="finish"
+             id="input-end-date">      
+    </td>
 
-<button type="button">Create Album</button>
+  </tr>
+</table>
+
+
+
+<button class="btn btn-default" type="button">Create Album</button>

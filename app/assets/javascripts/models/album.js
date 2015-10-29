@@ -14,5 +14,7 @@ Taglee.Models.Album = Backbone.Model.extend({
       this.media().set(response.media, { parse: true });
       delete response.media;
     }
+
+    return response;
   }
 });

@@ -1,6 +1,7 @@
 Taglee.Views.AlbumForm = Backbone.View.extend({
   template: JST['album/new'],
   tagName: 'form',
+  className: 'new-album',
 
   events: {
     'click button': 'submit'

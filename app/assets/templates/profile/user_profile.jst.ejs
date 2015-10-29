@@ -1,10 +1,9 @@
-<h1>User Profile</h1>
-<ul>
+<h1 class="page-title">My Albums</h1>
+<ul class="album-collection">
   <% albums.each(function (album) { %>
     <li>
-      <a href="#/albums/<%= album.id %>"><%= album.escape("name") %></a>
-      <button class="delete" data-id="<%= album.id %>">Delete!</button>
-      <a href="#/posts/<%= album.id %>/edit">Edit</a>
+      <a class="album-name" href="#/album/<%= album.id %>"><%= album.escape("name") %> (<%= album.escape('tag') %>) </a>
+      <button class="btn btn-default delete" data-id="<%= album.id %>">Delete!</button>
     </li>
   <% }); %>
 </ul>

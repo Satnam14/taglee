@@ -2,7 +2,7 @@ Taglee.Views.Profile = Backbone.View.extend({
   template: JST['profile/user_profile'],
 
   initialize: function () {
-    this.listenTo(this.collection, 'add change:title remove reset', this.render);
+    this.listenTo(this.collection, 'sync', this.render);
   },
 
   render: function () {

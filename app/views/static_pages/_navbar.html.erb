@@ -1,0 +1,22 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <img id="logo" src=" <%= image_path('logo') %> " alt="" />
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+      <ul class="nav navbar-nav navbar-right">
+        <% if signed_in? %>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">New Album</a></li>
+          <li><%= button_to "Sign Out", session_url, {method: :delete, class: 'sign-out btn btn-default'} %></li>
+        <% else %>
+          <li><a href="https://api.instagram.com/oauth/authorize/?client_id=2d4b160efb7248e983383029b9e904e8&redirect_uri=http://localhost:3000/users/auth/instagram/callback&response_type=code">Sign In with Instagram</a></li>
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

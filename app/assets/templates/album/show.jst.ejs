@@ -1,11 +1,11 @@
-<h1>Album</h1>
-<ul>
+<h1 class="page-title">Album</h1>
+<ul class="album">
   <% album.media().each(function (medium) { %>
     <li>
       <div class="medium">
-        <img src="<%= medium.escape('poster_profile')%> " alt="" />
+        <img class="profile-pic" src="<%= medium.escape('poster_profile')%>" alt="" />
         <h4> <%=medium.escape('poster')%> </h4>
-        <img src="<%= medium.escape('url')%> " alt="" />
+        <img class="medium-frame" src="<%= medium.escape('url')%>" alt="" />
         <p>
           <%= medium.escape('caption') %>
         </p>

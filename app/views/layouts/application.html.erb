@@ -8,14 +8,7 @@
 </head>
 <body>
 
-  <% if signed_in? %>
-      <li><%= current_user.full_name %></li>
-      <li><%= button_to "Sign out", session_url, method: :delete %></li>
-    <% else %>
-      <li><%= link_to "Sign In with Instagram", "https://api.instagram.com/oauth/authorize/?client_id=2d4b160efb7248e983383029b9e904e8&redirect_uri=http://localhost:3000/users/auth/instagram/callback&response_type=code" %></li>
-    <% end %>
-
-
+<%= render partial: "navbar" %>
 
 <%= yield %>
 
