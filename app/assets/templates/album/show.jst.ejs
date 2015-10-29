@@ -1,4 +1,9 @@
 <h1 class="page-title">Album</h1>
+
+<% if (album.media().length === 0) { %>
+  <h1 class="page-title">The album appears to be empty</h1>
+<% } %>
+
 <ul class="album">
   <% album.media().each(function (medium) { %>
     <li>
