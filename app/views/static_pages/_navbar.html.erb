@@ -14,7 +14,12 @@
           <li><a href="#album/new">New Album</a></li>
           <li><%= button_to "Sign Out", session_url, {method: :delete, class: 'sign-out btn btn-default'} %></li>
         <% else %>
-          <li><a href="https://api.instagram.com/oauth/authorize/?client_id=2d4b160efb7248e983383029b9e904e8&redirect_uri=http://localhost:3000/users/auth/instagram/callback&response_type=code">Sign In with Instagram</a></li>
+          <% if Rails.env.development? %>
+            <li><a href="https://api.instagram.com/oauth/authorize/?client_id=2d4b160efb7248e983383029b9e904e8&redirect_uri=http://localhost:3000/users/auth/instagram/callback&response_type=code">Sign In with Instagram</a></li>
+          <% else %>
+            <li><a href="https://api.instagram.com/oauth/authorize/?client_id=2d4b160efb7248e983383029b9e904e8&redirect_uri=https://taglee.herokuapp.com/users/auth/instagram/callback&response_type=code">Sign In with Instagram</a></li>
+          <% end %>
+
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
