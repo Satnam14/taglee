@@ -16,6 +16,11 @@ class Api::AlbumsController < ApplicationController
     render :json => @albums
   end
 
+  def show
+    @album = Album.find_by(id: params[:id])
+    render :json => { 'album' => @album, 'media' => @album.medium }
+  end
+
   private
 
   def add_media(album)

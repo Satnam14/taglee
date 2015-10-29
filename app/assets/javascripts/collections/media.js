@@ -17,5 +17,9 @@ Taglee.Collections.Media = Backbone.Collection.extend({
     }
 
     return medium;
+  },
+
+  initialize: function (models, options) {
+    this.album = options.album;
   }
 });

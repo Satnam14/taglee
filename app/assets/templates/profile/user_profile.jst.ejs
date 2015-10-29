@@ -2,7 +2,9 @@
 <ul>
   <% albums.each(function (album) { %>
     <li>
-      <%= album.escape('name') %>
+      <a href="#/albums/<%= album.id %>"><%= album.escape("name") %></a>
+      <button class="delete" data-id="<%= album.id %>">Delete!</button>
+      <a href="#/posts/<%= album.id %>/edit">Edit</a>
     </li>
   <% }); %>
 </ul>

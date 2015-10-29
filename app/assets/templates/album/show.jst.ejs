@@ -1,0 +1,15 @@
+<h1>Album</h1>
+<ul>
+  <% album.media().each(function (medium) { %>
+    <li>
+      <div class="medium">
+        <img src="<%= medium.escape('poster_profile')%> " alt="" />
+        <h4> <%=medium.escape('poster')%> </h4>
+        <img src="<%= medium.escape('url')%> " alt="" />
+        <p>
+          <%= medium.escape('caption') %>
+        </p>
+      </div>
+    </li>
+  <% }); %>
+</ul>
