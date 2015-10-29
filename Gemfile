@@ -39,6 +39,7 @@ gem 'binding_of_caller'
 gem 'better_errors'
 gem 'backbone-on-rails'
 gem 'underscore-rails'
+gem 'bootstrap-sass'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
